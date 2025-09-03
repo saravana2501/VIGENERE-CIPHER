@@ -143,3 +143,6 @@ void decipher() {
 <img width="916" height="582" alt="Screenshot 2025-09-03 110551" src="https://github.com/user-attachments/assets/28ceb233-22e0-435e-b7c4-3e15257c1488" />
 
 ## RESULT
+
+The program implementing the Vigenère cipher for encryption and decryption has been 
+successfully executed, and the results have been verified.
