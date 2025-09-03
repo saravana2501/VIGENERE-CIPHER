@@ -19,15 +19,28 @@ alphabet shifted cyclically to the left compared to the previous alphabet, corre
 
 ## ALGORITHM:
 
-STEP-1: Arrange the alphabets in row and column of a 26*26 matrix.
-STEP-2: Circulate the alphabets in each row to position left such that the first letter is attached to last.
-STEP-3: Repeat this process for all 26 rows and construct the final key matrix.
-STEP-4: The keyword and the plain text is read from the user.
-STEP-5: The characters in the keyword are repeated sequentially so as to match with that of the plain text.
-STEP-6: Pick the first letter of the plain text and that of the keyword as the row indices and column indices respectively.
-STEP-7: The junction character where these two meet forms the cipher character.
-STEP-8: Repeat the above steps to generate the entire cipher text.
+Step 1 : 
 
+Design of Vigenere Cipher algorithnm 
+
+Step 2 : 
+
+Implementation using C code 
+
+Step 3 : 
+
+1. The Vigenère cipher uses a series of Caesar ciphers based on letters from a repeating 
+keyword to encrypt text. 
+2. A Vigenère square or table is created with 26 rows of the alphabet, each shifted one 
+position left, representing different Caesar cipher shifts. 
+3. To encrypt, each letter of the plaintext is matched with a corresponding letter in the 
+keyword, repeated to match the message length. 
+4. The letter in the Vigenère table is selected by intersecting the row starting with the 
+keyword letter and the column with the plaintext letter. 
+5. The resulting encrypted text is a combination of letters taken from various 
+rows of the Vigenère square, based on the keyword. 
+6. Decryption reverses this process by identifying the original plaintext letter from 
+the appropriate row based on the keyword letter.
 
 ## PROGRAM
 
