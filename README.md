@@ -43,7 +43,103 @@ rows of the Vigenère square, based on the keyword.
 the appropriate row based on the keyword letter.
 
 ## PROGRAM
+```
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
 
+void encipher();
+void decipher();
+
+int main() {
+    int choice;
+
+    while (1) {
+        printf("\n1. Encrypt Text");
+        printf("\t2. Decrypt Text");
+        printf("\t3. Exit");
+        printf("\n\nEnter Your Choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 3)
+            return 0; // Exit program
+        else if (choice == 1)
+            encipher();
+        else if (choice == 2)
+            decipher();
+        else
+            printf("Please Enter a Valid Option.\n");
+    }
+
+    return 0;
+}
+
+void encipher() {
+    unsigned int i, j;
+    char input[50], key[10];
+
+    printf("\n\nEnter Plain Text: ");
+    scanf("%s", input);
+
+    printf("Enter Key Value: ");
+    scanf("%s", key);
+
+    printf("Resultant Cipher Text: ");
+    for (i = 0, j = 0; i < strlen(input); i++, j++) {
+        if (j == strlen(key)) {
+            j = 0; // Reset key index
+        }
+
+        char p = toupper(input[i]);
+        char k = toupper(key[j]);
+
+        if (isalpha(p)) {
+            char encrypted = ((p - 'A') + (k - 'A')) % 26 + 'A';
+            printf("%c", encrypted);
+        } else {
+            printf("%c", input[i]); // Keep non-letters unchanged
+        }
+    }
+    printf("\n");
+}
+
+void decipher() {
+    unsigned int i, j;
+    char input[50], key[10];
+    int value;
+
+    printf("\n\nEnter Cipher Text: ");
+    scanf("%s", input);
+
+    printf("Enter the Key Value: ");
+    scanf("%s", key);
+
+    printf("Decrypted Plain Text: ");
+    for (i = 0, j = 0; i < strlen(input); i++, j++) {
+        if (j == strlen(key)) {
+            j = 0; // Reset key index
+        }
+
+        char c = toupper(input[i]);
+        char k = toupper(key[j]);
+
+        if (isalpha(c)) {
+            value = (c - 'A') - (k - 'A');
+            if (value < 0)
+                value += 26;
+
+            printf("%c", value % 26 + 'A');
+        } else {
+            printf("%c", input[i]); // Keep non-letters unchanged
+        }
+    }
+    printf("\n");
+}
+
+```
 ## OUTPUT
+
+<img width="916" height="582" alt="Screenshot 2025-09-03 110551" src="https://github.com/user-attachments/assets/28ceb233-22e0-435e-b7c4-3e15257c1488" />
 
 ## RESULT
